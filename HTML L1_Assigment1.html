@@ -7,6 +7,25 @@
 		border: 1px solid black;
 		}
 	</style>
+	<script>
+		function stock()  {
+			var comp = document.getElementById("ticker").value;
+			var quant = document.getElementById("quantity").value;
+			if(quant%10 == 0){
+				var total = 0;
+				switch(comp)  {
+					case "WIPRO": total = quant * 341.00;break;
+					case "INFY": total = quant * 1060.40;break;
+					case "TCS": total = quant * 2663.55;break;
+					case "TECHM": total = quant * 811.20;break;
+				}
+				alert("You have selected " + quant + " shares of " + comp + " worth " + total + " INR ");
+			}
+			else{
+				alert("You can buy shares only in blocks of 10's. Please enter a valid input");
+			}
+		}
+	</script>
 </head>
 <body>
 	<table style="width:20%">
@@ -37,10 +56,10 @@
 			<td>Ticker:</td>
 			<td>
 				<select id="ticker">
-					<option value="volvo">WIPRO</option>
-					<option value="saab">INFY</option>
-					<option value="mercedes">TCS</option>
-					<option value="audi">TECHM</option>
+					<option value="WIPRO">WIPRO</option>
+					<option value="INFY">INFY</option>
+					<option value="TCS">TCS</option>
+					<option value="TECHM">TECHM</option>
 				</select>
 			</td>
 		</tr>
@@ -52,7 +71,7 @@
 		</tr>
 		<tr>
 			<td>
-				<input type="submit">
+				<button type="button" onclick="stock()">Submit</button>
 			</td>
 		</tr>
 	</table>

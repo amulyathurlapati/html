@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+	<script>
+		 google.charts.load('current', {packages: ['corechart', 'line']});
+		 google.charts.setOnLoadCallback(drawBackgroundColor);
+
+		function drawBackgroundColor() {
+			var data = new google.visualization.DataTable();
+			data.addColumn('number', 'X');
+			data.addColumn('number', 'Runs');
+			data.addRows([[0, 40],   [5, 75],  [15, 140]]);
+
+			var options = { hAxis: { title: 'Runs'},vAxis: {title: 'Overs' },backgroundColor: '#f1f8e9' };
+			var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+			chart.draw(data, options);
+		}
+	</script>
+</head>
+<body>
+	<center><h1>BCCI - Batting statics of Indian team in T20</h1></center>
+	<div id="chart_div"></div>
+</body>
+</html>

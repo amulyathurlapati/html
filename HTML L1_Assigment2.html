@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Xena Events</title>
+	<style>
+		html {
+			height: 100%;
+			width: 100%;
+		}
+
+		body {
+			display: table;
+			height: 100%;
+			margin: 0;
+			padding: 0;
+			width: 100%;
+		}
+
+		.row1 {
+			display: table-row;
+			height: 10%;
+			background-color: coral;
+		}
+		.row1 img {
+			margin-right:15%;
+			float:right; 
+			height:100px;
+			width:100px;
+		}
+
+		.view-area {
+			display: table-row;
+			height: 80%;
+			background-color: peachpuff;
+		}
+	
+	</style>
+	
+</head>
+<body>
+	<div class="row1">
+		<img src='balloon.jpg' alt='OOPS! Image is not loaded'>
+		<center><h1>Xena events conducts hot balloon riding event. Quickly register below</h1></center>
+		
+	</div>
+	
+	<div class="view-area">
+		<center>
+			<h2>Registration Form</h2>
+			<form>
+				<table style="font-size:20px">
+					<tr>
+						<td>Name:</td>
+						<td><input type="text" id="name" pattern="[A-Za-z]+" required></td>
+					</tr>
+					<tr>
+						<td>Age:</td>
+						<td><input type="number" id="age" min="18" required></td>
+					</tr>
+					<tr>
+						<td>Email:</td>
+						<td><input type="email" id="email" required></td>
+					</tr>
+					<tr>
+						<td>City:</td>
+						<td><input list="cities" id="city" pattern="[A-Za-z]+" required autocomplete></td>
+						<datalist id="cities">
+							<option>Rajkot</option>
+							<option>Vizag</option>
+							<option>Banglore</option>
+						</datalist>
+					</tr>
+				</table>
+				<br><input type="submit">
+			</form>
+		</center>
+	</div>
+	
+</body>
+</html>
